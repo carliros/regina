@@ -1,9 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--
-  User: Carlos Gomez
-  Date: 06-10-12
-  Time: 09:44 PM
--->
 <!DOCTYPE html
         PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -20,12 +15,22 @@
     <h:form>
         <p:commandButton value="Hello from PrimeFaces and Regina Project"
                          onclick="dlg1.show();"
-                         type="button" />
+                         type="button"/>
 
         <p:dialog header="PrimeFaces Dialog"
                   widgetVar="dlg1"
                   width="500">For more information visit <a href="http://primefaces.org">http://primefaces.org</a>.
         </p:dialog>
+    </h:form>
+
+    <hr/>
+    <h:form>
+        <h:link outcome="newPerson.xhtml" value="Create a new Person"/>
+    </h:form>
+
+    <br/>
+    <h:form>
+        <h:link outcome="listPersons.xhtml" value="List of Persons"/>
     </h:form>
 </h:body>
 
