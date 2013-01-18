@@ -14,7 +14,7 @@ import java.util.List;
 
 @Stateless
 public class PersonEJB {
-    @PersistenceContext(unitName = "mysqlPU")
+    @PersistenceContext(unitName = "reginaPU")
     private EntityManager em;
 
     public List<Person> findPersons() {

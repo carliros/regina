@@ -14,7 +14,6 @@ import java.util.List;
 
 @ManagedBean
 @RequestScoped
-
 public class PersonController {
     @EJB
     private PersonEJB personEJB;
@@ -28,14 +27,6 @@ public class PersonController {
         return "listPersons.xhtml";
     }
 
-    public PersonEJB getPersonEJB() {
-        return personEJB;
-    }
-
-    public void setPersonEJB(PersonEJB personEJB) {
-        this.personEJB = personEJB;
-    }
-
     public Person getPerson() {
         return person;
     }
@@ -45,10 +36,6 @@ public class PersonController {
     }
 
     public List<Person> getPersonList() {
-        return personList;
-    }
-
-    public void setPersonList(List<Person> personList) {
-        this.personList = personList;
+        return personEJB.findPersons();
     }
 }

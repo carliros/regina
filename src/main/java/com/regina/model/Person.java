@@ -8,11 +8,12 @@ import javax.persistence.*;
 
 @Entity
 @NamedQuery(name = "findAllPersons"
-        , query = "SELECT b FROM Person b")
+        , query = "SELECT p FROM Person p")
 public class Person {
     @Id
     @GeneratedValue
     private Long id;
+
     @Column(nullable = false)
     private String name;
 
