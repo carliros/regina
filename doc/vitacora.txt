@@ -1,0 +1,5 @@
+
+24/01/2013 -> I modified the project in order to be deployed in jboss as 7 with hibernate
+    - I noticed there are some differences between hibernate and eclipselink
+        It don't compile well in hibernate: PersonEJB.java
+            TypedQuery<Person> query = em.createNamedQuery("findAllPersons", Person.class);

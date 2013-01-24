@@ -18,7 +18,9 @@ public class PersonEJB {
     private EntityManager em;
 
     public List<Person> findPersons() {
-        TypedQuery<Person> query = em.createNamedQuery("findAllPersons", Person.class);
+        TypedQuery<Person> query = (TypedQuery<Person>) em.createNamedQuery("findAllPersons");
+                //em.createNamedQuery("findAllPersons", Person.class);
+
         return query.getResultList();
     }
 
