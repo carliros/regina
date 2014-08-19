@@ -5,13 +5,56 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
       xmlns:p="http://primefaces.org/ui">
 
 <h:head>
-    <title>Regina, A Registration System for Events</title>
+    <title>#{msg['titleApp']}</title>
 </h:head>
 
 <h:body>
+    <p:layout fullPage="true">
+        <p:layoutUnit position="north">
+            <h3>#{msg['titleApp']}</h3>
+        </p:layoutUnit>
+
+        <p:layoutUnit position="center">
+            <h:form>     
+                <p:growl id="messages" showDetail="true" />
+ 
+                <p:toolbar>
+                    <f:facet name="left">
+                        <p:button type="button" 
+                                  value="#{msg['label.newPerson']}"
+                                  outcome="/newPerson.xhtml"
+                                  icon="ui-icon-document" />
+                        <p:button type="button" 
+                                  value="#{msg['label.listPerson']}"
+                                  outcome="/listPersons.xhtml"
+                                  icon="ui-icon-folder-open" />
+ 
+                        <span class="ui-separator">
+                            <span class="ui-icon ui-icon-grip-dotted-vertical" />
+                        </span>
+                    </f:facet>
+ 
+                    <f:facet name="right">
+                        <p:menuButton value="Options">
+                            <p:menuitem value="#{msg['label.newPerson']}" outcome="/newPerson.xhtml" icon="ui-icon-document" />
+                            <p:menuitem value="#{msg['label.listPerson']}" outcome="/listPersons.xhtml" icon="ui-icon-arrowrefresh-1-w" />
+                        </p:menuButton>
+                    </f:facet>
+                </p:toolbar>
+            </h:form>
+        </p:layoutUnit>
+
+        <p:layoutUnit position="south" size="100">
+        </p:layoutUnit>
+    </p:layout>
+
+
+    
+<!--
     <h:form>
         <p:commandButton value="Hello from PrimeFaces and Regina Project"
                          onclick="dlg1.show();"
@@ -21,6 +64,7 @@
                   widgetVar="dlg1"
                   width="500">For more information visit <a href="http://primefaces.org">http://primefaces.org</a>.
         </p:dialog>
+        <p:editor/>
     </h:form>
 
     <hr/>
@@ -32,6 +76,7 @@
     <h:form>
         <h:link outcome="listPersons.xhtml" value="List of Persons"/>
     </h:form>
+-->
 </h:body>
 
 </html>
