@@ -63,15 +63,17 @@ The first way is by the web admin:
 But you can also add by jboss-cli:
 
 1. Execute it in the console:
+
     data-source add --name=ReginaMysqlDS --connection-url="jdbc:mysql://localhost:3306/regina" --jndi-name=java:jboss/datasources/ReginaMySqlDS --driver-name=mysql --user-name="root" --password="root"
 
 Template:
 
     data-source add --name=MysqlDS --connection-url="jdbc:mysql://${db.host}:3306/${db.database}" --jndi-name=java:jboss/datasources/MysqlDS --driver-name=mysql --user-name="${db.user}" --password="${db.passwd}"
 2. Enable the data source:
-    /subsystem=datasources/data-source=ReginaMysqlDS:enable
 
+    /subsystem=datasources/data-source=ReginaMysqlDS:enable
 3. In case you need to delete the data source, you can use:
+
     data-source remove --name=MysqlDS
 
 You can get more information here: [JBoss Manual](https://docs.jboss.org/author/display/AS71/DataSource+configuration), or here [too](https://access.redhat.com/documentation/en-US/JBoss_Enterprise_Application_Platform/6/html-single/Administration_and_Configuration_Guide/index.html#Install_a_JDBC_Driver_as_a_Core_Module1).
