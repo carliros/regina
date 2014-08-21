@@ -13,6 +13,8 @@ To install the app
 3. Deploy (command line):
     * mvn clean package
     * (jboss-cli) deploy $pathProject$/target/regina.war
+
+   Or directly by $mvn jboss-as:deploy$
 4. Run the app
    http://localhost:8080/regina
 
@@ -66,9 +68,10 @@ But you can also add by jboss-cli:
 
     data-source add --name=ReginaMysqlDS --connection-url="jdbc:mysql://localhost:3306/regina" --jndi-name=java:jboss/datasources/ReginaMySqlDS --driver-name=mysql --user-name="root" --password="root"
 
-Template:
+   Template:
 
     data-source add --name=MysqlDS --connection-url="jdbc:mysql://${db.host}:3306/${db.database}" --jndi-name=java:jboss/datasources/MysqlDS --driver-name=mysql --user-name="${db.user}" --password="${db.passwd}"
+
 2. Enable the data source:
 
     /subsystem=datasources/data-source=ReginaMysqlDS:enable
